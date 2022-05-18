@@ -1,0 +1,33 @@
+﻿
+@model Translate
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form action="/Home/Index" method="post">
+<div class="mb-3">
+        <label class="form-label">Text</label>
+        <input type="text" name="Text" class="form-control">
+    </div>
+        <button type="submit" class="btn btn-success  col-md-3">Add</button>
+</form>
+
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>Success</th>
+            <th>Translation</th>
+            <th>Text</th>
+            <th>Translated</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>@Model.success.total.ToString()</td>
+                <td>@Model.contents.translation</td>
+                <td>@Model.contents.text</td>
+                <td>@Model.contents.translated</td>
+            </tr>
+    </tbody>
+</table>
